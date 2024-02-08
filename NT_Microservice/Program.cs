@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Routing;
 using NT_Microservice.Services;
-using static NT_Microservice.Services.TestServices;
 
 namespace NT_Microservice.Services
 {
@@ -18,10 +17,6 @@ namespace NT_Microservice.Services
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
-            builder.Services.AddTransient<ITransientService, TransientService>();
-            builder.Services.AddScoped<IScopedService, ScopedService>();
-            builder.Services.AddSingleton<ISingletonService, SingletonService>();
 
             builder.Services.AddHttpClient();
             builder.Services.AddHostedService<ElectricityPriceFetchingService>();
